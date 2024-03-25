@@ -8,8 +8,8 @@ A vource source controll user interface  web-app developed with svelte on the fr
   <img width="300" src="GUI.PNG">
 </p> -->
 
-![UI](./vsource_cropped_dark.png#gh-dark-mode-only)
-![UI](./vsource_cropped_light.png#gh-light-mode-only)
+![UI](https://raw.githubusercontent.com/sansseriff/Isolated_Voltage_Source/master/vsource_cropped_dark.png#gh-dark-mode-only)
+![UI](https://raw.githubusercontent.com/sansseriff/Isolated_Voltage_Source/master/vsouce_cropped_light.png#gh-light-mode-only)
 
 
 The webserver is packaged using docker. Docker commands to deploy or build the container:
