@@ -1,5 +1,6 @@
 # 
 FROM python:3.11-bullseye
+# the bullseye version was used to avoid a `can't add extra threads` error
 
 # 
 WORKDIR /code
