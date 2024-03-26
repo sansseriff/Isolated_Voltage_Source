@@ -62,7 +62,7 @@ The above guide for RHEL may work, with the baseurl in `[centos-extras]` changed
 follow [this](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04) guide for installation, and for configuring docker commands to work without sudo. 
 
 ### 2a. Download and run published image
-If you don't plan to customize the voltage source user interface or back-end webserver, you may download a version from dockerhub:
+If you don't plan to customize the voltage source user interface or back-end webserver, you may download a version from dockerhub. This version works on x86-64 architecture computers. It will not work on ARM-based computers like raspberry pi. To get an ARM-compatible image, you will have to build it yourself. See instructions in 2b. 
 
 Download:
 
@@ -128,6 +128,15 @@ docker run -d -p 80:80 vsource_control -d --restart unless-stopped
 docker rm -f vsource_control_container
 ```
 
+### remove 'dangling' images. 
+
+If you remove a container and make a new image with the same name as an old one, the old image is not deleted. It loses it's name and becomes a 'dangling image'. Remove these with:
+
+```
+docker image prune
+```
+
+
 Note: if you're changing something like CSS, you might need to rebuild the container with no cache. The docker rebuid process is iterative and might not 'notice' that a particular file needs to be updated:
 ```console
 docker build -t vsource_control . --no-cache
@@ -140,4 +149,34 @@ docker ps
 2. view the logs in real time
 ```console
 docker logs -f <container_id>
+```
+
+
+## Developer Notes
+
+The uploaded docker image was built on an ARM-based macbook. In order to build an image that will run on an x86-64 platform, you have to use `buildx`, a feature for multi-architecture builds. 
+
+
+
+
+```
+
+# Create a new builder instance
+docker buildx create --name mybuilder
+
+# Switch to the new builder instance
+docker buildx use mybuilder
+
+# Start up the builder instance
+docker buildx inspect --bootstrap
+
+# build the image and pull it to the local docker desktop (?) 
+docker buildx build --platform linux/amd64 -t sansseriff/vsource_control . --load
+```
+
+Then with the docker desktop utility, publish the image to dockerhub. This way works without signing issues. If I used the --push option for that last command, then the built container had signing issues. I would get this error when trying to pull:
+
+```
+Trying to pull repository docker.io/sansseriff/vsource_control ... 
+missing signature key
 ```
