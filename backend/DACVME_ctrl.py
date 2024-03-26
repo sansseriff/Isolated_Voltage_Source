@@ -40,7 +40,7 @@ class VMECTRL:
             message = "SetDAC "+ str(board) + " " + str(dacchan) + " " + str(voltage) + "\n"
         print(message)
         
-        # return self.send_message(message)
+        return self.send_message(message)
 
     def setChVol(self, board, diffchan, voltage):
         if board <0 or board > 7:

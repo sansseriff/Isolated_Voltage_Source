@@ -356,7 +356,7 @@
                     {uiStateStore}>{st.action_string}</Button
                 >
                 <input
-                    type="text"
+                    type="number"
                     bind:this={inputRef}
                     on:keydown={handleInputKeyDown}
                 />
@@ -512,7 +512,7 @@
         margin-bottom: auto;
         padding: 0rem 0rem;
         padding-right: 0.8rem;
-        padding-bottom: 0.2rem;
+        padding-bottom: 0.20rem;
         opacity: 0.5;
         color: var(--text-color);
     }
@@ -547,6 +547,7 @@
         color: var(--digits-color);
         background-color: var(--heading-color);
         border: 1.5px solid var(--heading-color);
+        padding-bottom: 0.20rem;
     }
 
     .heading-input:hover {
@@ -717,16 +718,21 @@
 
     .toggle_up {
         transform: rotate(90deg);
+        margin-top: 0.17rem;
+        padding-top: 0.2rem;
         transition: transform 0.2s ease-in-out;
     }
 
     .toggle_down {
         transform: rotate(0);
+        margin-top: 0.1rem;
+        padding-top: 0.2rem;
         transition: transform 0.2s ease-in-out;
     }
 
     .chevron {
-        padding-top: 3px;
+        /* margin-top: 0.01rem;
+        padding-top: 0.2rem; */
         color: var(--icon-color);
     }
 
@@ -744,13 +750,13 @@
         background-color: var(--heading-color);
         border-bottom: 1.3px solid var(--inner-border-color);
         justify-content: space-between;
-        padding: 5px 10px;
+        padding: 0.2rem 1rem;
         padding-right: 13px;
     }
 
     .dot-menu {
         padding: 0px 12px;
-        padding-top: 3px;
+        padding-top: 0.25rem;
         color: var(--icon-color);
     }
 

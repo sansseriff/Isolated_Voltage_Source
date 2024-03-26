@@ -92,8 +92,8 @@
 
 <style>
   .chevron {
-    margin-top: 4px;
-    margin-left: 5px;
+    margin-top: 0.1rem;
+    margin-left: 0.2rem;
     /* padding-top: 1px; */
     color: var(--module-icon-color);
   }
@@ -145,7 +145,7 @@
     flex-direction: row;
     /* justify-content: space-between; */
     background-color: var(--module-header-color);
-    padding: 0.2rem;
+    padding: 0.3rem;
     color: var(--text-color);
     font-size: 1.3rem;
     /* margin-right: auto;
@@ -154,7 +154,7 @@
     /* padding-right: 0.8rem; */
     /* opacity: 0.5; */
     border: 1.3px solid var(--module-border-color);
-    /* border-radius: 0.4rem; */
+    border-radius: 0.4rem;
   }
 
   .module-container {
@@ -169,13 +169,13 @@
     margin-bottom: 2rem;
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 460px) {
     .module-container {
       margin: 5px 20px 15px 5px;
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 460px) {
     .module-container {
       margin: 5px 5px 15px 5px;
     }

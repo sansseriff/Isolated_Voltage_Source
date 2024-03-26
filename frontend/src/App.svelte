@@ -176,11 +176,11 @@
     background-color: var(--bg-color);
   } */
 
-  @media (min-width: 500px) {
+  @media (min-width: 460px) {
     .main-bar {
       flex-grow: 0;
-      min-width: 460px;
-      max-width: 460px;
+      min-width: 420px;
+      max-width: 420px;
     }
     .side-area {
       display: flex;
@@ -192,7 +192,7 @@
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 460px) {
     .side-area {
       display: none;
     }

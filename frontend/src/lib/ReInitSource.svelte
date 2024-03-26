@@ -126,6 +126,7 @@
     font-size: 1.2rem;
     /* letter-spacing: 0.58rem; */
     color: var(--digits-color);
+    width: 10rem;
     transition: background-color 0.1s ease-in-out;
   }
 
@@ -166,13 +167,13 @@
     margin: 0.2rem 0rem;
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 460px) {
     .basic-block {
       margin: 5px 20px 5px 5px;
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 460px) {
     .basic-block {
       margin: 5px 5px 5px 5px;
     }

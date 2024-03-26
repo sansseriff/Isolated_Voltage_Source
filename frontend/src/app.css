@@ -9,6 +9,12 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 13px;
+}
+
+
+
 h1 {
   color: var(--text-color);
   font-size: 1.2rem;
@@ -64,4 +70,8 @@ li {
   --module-border-color: rgb(59, 59, 59);
   --module-icon-color: #f1f1f1;
   --red-highlight: #c70014;
+}
+
+body {
+  background-color: var(--bg-color);
 }

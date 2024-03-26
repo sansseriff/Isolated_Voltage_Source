@@ -47,7 +47,7 @@
 <button
   class="{$uiStateStore.colorMode
     ? 'bg-gray-500 '
-    : ' bg-gray-800'} relative inline-flex flex-shrink-1 h-[19px] w-[35.25px] border-2 border-transparent rounded-full ease-in-out duration-200 my-auto mx-1 mr-4"
+    : ' bg-gray-800'} relative inline-flex flex-shrink-1 h-[1.22rem] w-[2.25rem] border-2 border-transparent rounded-full ease-in-out duration-200 my-auto mx-1 mr-4"
   on:click={toggle}
 >
   <span class="sr-only">Toggle Dark Mode</span>

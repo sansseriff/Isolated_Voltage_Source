@@ -148,13 +148,13 @@
     color: var(--module-icon-color);
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 460px) {
     .bound-box {
       margin: 5px 20px 5px 5px;
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 460px) {
     .bound-box {
       margin: 5px 5px 5px 5px;
     }
