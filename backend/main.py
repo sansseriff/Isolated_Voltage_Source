@@ -261,6 +261,8 @@ async def voltage_set(request: Request, change: VoltageChange):
     #     " module_index: ",
     #     change.module_index,
     # )
+
+    # change.index starts at 1
     change.bias_voltage = round(change.bias_voltage, 4)
     identify_change(
         change, source_state.data[change.module_index - 1].channels[change.index - 1]
@@ -284,10 +286,10 @@ async def voltage_set(request: Request, change: VoltageChange):
 
             # !!!! update!
 
-            # vsource.setChVol(board, change.index, 0)
+            vsource.setChVol(board, change.index-1, 0)
             return change
         else:  # turning on or already on
-            print("turning on ", change.index, "or already on")
+            print("turning on ", change.index-1, "or already on")
             source_channel.bias_voltage = change.bias_voltage
 
             if source_channel.activated == False:
@@ -295,7 +297,7 @@ async def voltage_set(request: Request, change: VoltageChange):
                 source_channel.activated = True
 
             # ch, voltage = source.setVoltage(change.channel, change.voltage)
-            # vsource.setChVol(board, change.index, change.bias_voltage)
+            vsource.setChVol(board, change.index-1, change.bias_voltage)
 
             return change
     else:
@@ -305,7 +307,7 @@ async def voltage_set(request: Request, change: VoltageChange):
 async def zero_out_module(module: Module):
     for channel in range(len(module.channels)):
         await asyncio.sleep(0.01)
-        # vsource.setChVol(module.slot, channel, 0)
+        vsource.setChVol(module.slot, channel, 0)
 
 
 @app.post("/initialize-module")

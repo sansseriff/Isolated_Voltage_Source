@@ -72,7 +72,7 @@ docker pull sansseriff/vsource_control
 
 Run:
 ```
-docker run -d --restart unless-stopped --name vsource_control_container -p 80:80 sansseriff/vsource_control
+docker run -d --restart unless-stopped --name vsource_control_container --log-opt max-size=10m --log-opt max-file=3 -p 80:80 sansseriff/vsource_control
 ```
 
 The user interface should now be visible by typing `0.0.0.0` into the browser of the computer running docker. If docker was installed on a remote host computer on the same network, view the UI by directing the browser to the ip address of the host computer. 

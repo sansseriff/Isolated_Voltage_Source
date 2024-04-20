@@ -52,12 +52,12 @@ class VMECTRL:
         if  voltage < -20  or voltage > 20:
             return "error, voltage out of range"
         else:
-            #r1 = self.setDACVol(board, diffchan*2, voltage/2)
-            #r2 = self.setDACVol(board, diffchan*2+1, -voltage/2)
-            r1 = self.setDACVol(board, diffchan, voltage)
-            r2 = '+ok\n'
-            #print(r1)
-            #print(r2)
+            r1 = self.setDACVol(board, diffchan*2, voltage/2)
+            r2 = self.setDACVol(board, diffchan*2+1, -voltage/2)
+            # r1 = self.setDACVol(board, diffchan, voltage)
+            # r2 = '+ok\n'
+            print(r1)
+            print(r2)
             if r1 == '+ok\n' and r2 == '+ok\n':
                 return 0
             else: 
